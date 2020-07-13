@@ -1,0 +1,62 @@
+<div>
+    <div class="barbell-graphic-container" *ngIf="barType == 0">
+        <div *ngIf="hasRequiredPlates()" class="inline-block">
+            <div *ngFor="let plate of requiredWeights.reverse()" class="inline-block">
+                <div class="weight-plate-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+            </div>
+        </div>
+        <div class="barbell-container">
+            <div class="barbell-graphic weight-plate-graphic">{{ emptyBarWeight }}</div>
+        </div>
+        <div *ngIf="hasRequiredPlates()" class="inline-block">
+            <div *ngFor="let plate of requiredWeights.reverse()" class="inline-block">
+                <div class="weight-plate-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="barbell-graphic-container"  *ngIf="barType == 1">
+        <div *ngIf="hasRequiredPlates()" class="inline-block">
+            <div *ngFor="let plate of requiredWeights.reverse()" class="inline-block">
+                <div class="weight-plate-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+            </div>
+        </div>
+        <div class="barbell-container">
+            <div class="barbell-graphic weight-plate-graphic">{{ emptyBarWeight }}</div>
+        </div>
+        <div *ngIf="hasRequiredPlates()" class="inline-block">
+            <div *ngFor="let plate of requiredWeights.reverse()" class="inline-block">
+                <div class="weight-plate-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div *ngIf="hasRequiredPlates()" class="inline-block">
+            <div *ngFor="let plate of requiredWeights.reverse()" class="inline-block">
+                <div class="weight-plate-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+            </div>
+        </div>
+        <div class="barbell-container">
+            <div class="barbell-graphic weight-plate-graphic">{{ emptyBarWeight }}</div>
+        </div>
+        <div *ngIf="hasRequiredPlates()" class="inline-block">
+            <div *ngFor="let plate of requiredWeights.reverse()" class="inline-block">
+                <div class="weight-plate-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="barType == 2"> 
+        <div class="loading-pin-container">
+            <div class="loading-pin-top"></div>
+            <div *ngIf="hasRequiredPlates()" class="loading-pin-container">
+                <div *ngFor="let plate of requiredWeights.reverse()" class="">
+                    <div class="loading-pin-graphic"  [style.background-color]="plate.plateColor">{{ plate.value }}</div>
+                </div>
+            </div>
+            <div class="loading-pin-container">
+                <div class="loading-pin-graphic loading-pin-bar">{{ emptyBarWeight }}</div>
+            </div>
+        </div>
+    </div>
+</div>

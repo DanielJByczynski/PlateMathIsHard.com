@@ -1,0 +1,70 @@
+.container {
+    margin: 0 auto;
+}
+
+.unit-container {
+    a {
+        text-decoration: none;
+        max-width: 100%;
+    }
+}
+
+.bartype-button {
+    font-weight: bold;
+    background: lightgray;
+    padding: .3em .8em;
+    margin: .5em;
+    cursor: pointer;
+    user-select: none;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+.bartype-active {
+    background-color: rgb(233, 73, 133);
+    color: white;
+}
+
+.weight-input {
+    width: 2.5em;
+}
+
+#target-input {
+    width: 3.25em;
+}
+
+.slider {
+    width: 100%;
+}
+
+.plate-inventory {
+    display: table;
+
+    li {
+        display: table-row;
+        list-style: none;
+
+        label {
+            display: table-cell;
+        }
+
+        input {
+            display: table-cell;
+        }
+    }
+}
+
+.plate-string {
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+@media screen and (max-device-width: 980px) {
+    .bartype-button {
+        width: 50%;
+        display: block;
+        margin: .5em auto;
+    }
+}

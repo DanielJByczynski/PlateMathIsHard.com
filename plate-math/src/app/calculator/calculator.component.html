@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="unit-container">
+        <a class="bartype-button bartype-active" routerLink="/metric" routerLinkActive="active">Imperial</a>
+    </div>
+
+    <div class="bartype-button-container">
+        <h2>Bar Type:</h2>
+        <div class="bartype-button" (click)="setBarType(0)" [class.bartype-active]="barType === 0">Barbell</div>
+        <div class="bartype-button" (click)="setBarType(1)" [class.bartype-active]="barType === 1">Dumbbells</div>
+        <div class="bartype-button" (click)="setBarType(2)" [class.bartype-active]="barType === 2">Loading Pin</div>
+    </div>
+    <h2>Plate Inventory:</h2>
+    <label for="barweight">Empty Bar Weight: <input type="number" id="barweight" step="5" min="0" max="1000" class="weight-input" [(ngModel)]="emptyBarWeight">lbs</label>
+    
+
+    <ul class="plate-inventory">
+        <li>
+            <label for="fortyfive">45lbs:  </label>
+            <input type="number" id="fortyfive" class="weight-input" [(ngModel)]="plates[0].quantity" step="{{weightStep}}" min="0" max="20" />
+        </li>        
+        <li>
+            <label for="thirtyfive">35lbs:  </label>
+            <input type="number" id="thirtyfive" class="weight-input" [(ngModel)]="plates[1].quantity" step="{{weightStep}}" min="0" max="20" />
+        </li>        
+        <li>
+            <label for="twentyfive">25lbs:  </label>
+            <input type="number" id="twentyfive" class="weight-input" [(ngModel)]="plates[2].quantity" step="{{weightStep}}" min="0" max="20" />
+        </li>        
+        <li>
+            <label for="ten">10lbs:  </label>
+            <input type="number" id="ten" class="weight-input" [(ngModel)]="plates[3].quantity" step="{{weightStep}}" min="0" max="20" />
+        </li>        
+        <li>
+            <label for="five">5lbs:   </label>
+            <input type="number" id="five" class="weight-input" [(ngModel)]="plates[4].quantity" step="{{weightStep}}" min="0" max="20" />
+        </li>        
+        <li>
+            <label for="twoandahalf">2.5lbs: </label>
+            <input type="number" id="twoandahalf" class="weight-input" [(ngModel)]="plates[5].quantity" step="{{weightStep}}" min="0" max="20" />
+        </li>
+    </ul>
+
+    <h2>Target Weight:</h2>
+    <label for="target">Desired Weight on Bar: <input type="number" id="target-input" name="target-input" [(ngModel)]="targetWeight" step="5" min="{{ emptyBarWeight }}" max="{{ getTotalWeight() }}"/>lbs  </label>
+    <input type="range" id="target" class="slider" name="target" [(ngModel)]="targetWeight" step="5" min="{{ emptyBarWeight }}" max="{{ getTotalWeight() }}" required>
+
+    <h2>Weight Plate Output: {{ targetWeight }}lbs</h2>
+    
+    <app-diagram [barType]="barType" 
+                 [emptyBarWeight]="emptyBarWeight" 
+                 [requiredWeights]="requiredWeights"></app-diagram>
+    <div class="centered plate-string" >
+        <p>{{ getRequiredPlatesString() }}</p>
+    </div>
+</div>

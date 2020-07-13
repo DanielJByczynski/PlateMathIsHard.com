@@ -1,0 +1,67 @@
+.barbell-graphic-container {
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;  
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.barbell-graphic-container::-webkit-scrollbar {
+    display: none;
+}
+
+.barbell-graphic{
+    background-color: gray;
+    margin: 0 auto;
+    padding: 0 50px !important;
+    display: inline-block;
+}
+
+.weight-plate-graphic {
+    display: inline-block;
+    border: black solid 1px;
+    padding: 50px 3px;
+    min-width: 25px;
+}
+
+.barbell-container {
+    display: inline-block;
+    padding: 50px 0;
+    min-width: 25px;
+}
+
+.loading-pin-bar {
+    display: block;
+}
+
+.loading-pin-graphic {
+    background-color: gray;
+    display: block;
+    margin: 0 auto;
+    border: black solid 1px;
+    padding: 3px 50px;
+    width: 25px;
+    text-align: center;
+}
+
+.loading-pin-top {
+    background-color: gray;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    border: black solid 1px;
+    border-bottom: none;
+}
+
+.loading-pin-container{
+    white-space: nowrap;
+    overflow-x: none;
+    overflow-y: hidden;  
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.loading-pin-container::-webkit-scrollbar {
+    display: none;
+}
